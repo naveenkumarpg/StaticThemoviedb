@@ -1,11 +1,13 @@
 export default class favlist{
-    Updateselect(){
 
+    /*
+    * method - to get pre configured list from jsonblob
+    */
+    updateSelect(){
         let url = "https://jsonblob.com/api/jsonBlob/cd68be36-83f5-11e8-b682-811851c5a022";
         //let url = '/dist/json/categories.json';
 
         let getFavList = new Promise((resolve, reject)=>{
-
             fetch(url).then((data) =>{
                 return data.json();
             }).then(data =>{
@@ -21,6 +23,9 @@ export default class favlist{
         })
     }
 
+    /*
+    * Method is to create pre-configured list from jsonblob
+    */
     crateCheckboxes(favlist){
         let HTML = "";
         for(let key in favlist){
@@ -31,6 +36,9 @@ export default class favlist{
         this.favAddEvents();
     }
     
+    /*
+    * Binding click events to the button to Add/Remove from fav list.
+    */
     favAddEvents(){
         var favbuttons = document.getElementsByClassName("favbuttons");
         for(var i = 0; i < favbuttons.length; i++) {
@@ -41,6 +49,9 @@ export default class favlist{
         }
     }
 
+    /*
+    * based on the user action, green button classes will be added/removed from the pages
+    */
     classToggler(favitem){
         var el = document.getElementById('cat-'+favitem);
         
@@ -53,6 +64,10 @@ export default class favlist{
         }
     }
 
+    /*
+    * @item - is the button text clicked.
+    * @url - data has been saved/Savedback to the blob JSON provider
+    */
     removefromFavList(item){
         let url = "https://jsonblob.com/api/jsonBlob/2ed05992-8401-11e8-b682-59b3e06478e3";
         let movieid = document.getElementById("movieid").dataset.movieid;
@@ -68,8 +83,12 @@ export default class favlist{
           }).then(res => res.json())
           .catch(error => console.error('Error:', error))
           .then(response => console.log('Success:', response));
-
     }
+
+    /*
+    * @item - is selected category
+    * by this method item will be removed from the list.
+    */
     addtoFavList(item){
         let url = "https://jsonblob.com/api/jsonBlob/2ed05992-8401-11e8-b682-59b3e06478e3";
         let movieid = document.getElementById("movieid").dataset.movieid;
@@ -92,6 +111,9 @@ export default class favlist{
           .then(response => console.log('Success:', response));
     }
 
+    /*
+    * to get the list of fav movies and catogories.
+    */
     getfavedList(){
         let url = "https://jsonblob.com/api/jsonBlob/2ed05992-8401-11e8-b682-59b3e06478e3";
         //let url = '/dist/json/favs.json';

@@ -3,6 +3,9 @@ import Text from '../text/messages'
 
 export default class landing{
 
+    /*
+    * to determine to show error message or to proceed with user entered text
+    */
     getData(){
         //TODO 
         // WHY Prototype while calling error messaage.
@@ -11,6 +14,10 @@ export default class landing{
         //(movieSText.length <= 3) ? this.showErrorMessage(messages.inputError) : this.proceedSearch("Pirates");
     }
 
+    /*
+    * @movieSText - is user entered text.
+    * call has to be made to get the data from the tmdb
+    */
     proceedSearch(movieSText){
         let url = `http://api.themoviedb.org/3/search/movie?api_key=66fa95d87d40faf5c50324a339937e6c&query=${movieSText}`;
         //let url = '/dist/json/results.json';
@@ -32,6 +39,10 @@ export default class landing{
         })
     }
 
+    /*
+    * @response - response form tmdb  
+    * on sucess full feth of the data, rendeting the column shows movies details/
+    */
     renderTable(response){ 
         let movieLength = response.results.length;
         document.getElementById("total").innerHTML =`We have found ${movieLength} Movies with search term`
