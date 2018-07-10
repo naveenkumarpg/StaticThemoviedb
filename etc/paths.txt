@@ -1,0 +1,22 @@
+
+Individual movie : http://api.themoviedb.org/3/movie/11483?api_key=66fa95d87d40faf5c50324a339937e6c
+Individual movie : http://api.themoviedb.org/3/movie/1865?api_key=66fa95d87d40faf5c50324a339937e6c
+
+
+
+
+Get fav list.
+Edit : https://jsonblob.com/cd68be36-83f5-11e8-b682-811851c5a022
+
+JSON : https://jsonblob.com/api/jsonBlob/cd68be36-83f5-11e8-b682-811851c5a022
+
+API : https://jsonblob.com/api
+
+
+
+
+Faved List 
+
+
+    https://jsonblob.com/2ed05992-8401-11e8-b682-59b3e06478e3
+    2ed05992-8401-11e8-b682-59b3e06478e3
