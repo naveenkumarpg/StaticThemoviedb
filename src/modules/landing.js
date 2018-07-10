@@ -23,12 +23,19 @@ export default class landing{
         });
 
         getData.then((response) => {
-            // console.log(response);
-            this.renderTable(response);
+            if(response.results.length <=0){
+                ErrorMsg.prototype.showErrorMessage(Text.nomovies)
+            }else{
+                this.renderTable(response);    
+            }
+            
         })
     }
 
     renderTable(response){ 
+        let movieLength = response.results.length;
+        document.getElementById("total").innerHTML =`We have found ${movieLength} Movies with search term`
+
         let HTML =  response.results.map((data) =>{
             let imagePath =""
             if(!data.poster_path){
@@ -47,6 +54,8 @@ export default class landing{
 
         document.getElementById("moviesData").innerHTML = HTML.join("");
         document.getElementById("detailwrapper").classList.add("hide");
+        document.getElementById("moviesData").classList.remove("hide");
+        
     }
 
 }
