@@ -1,8 +1,8 @@
 import FavList from './favlist'
 
 export default class detail {
+    
     getDetailjon(movieID){
-
         let url =  `http://api.themoviedb.org/3/movie/${movieID}?api_key=66fa95d87d40faf5c50324a339937e6c`;
         //let url = '/dist/json/detail.json';
         var getDetailData = new Promise((resolve,reject) =>{
